@@ -43,7 +43,6 @@ public class CountryController {
     public String deleteCountryForm(@PathVariable(name = "code", required = false) String code, Model model) {
         Country country = code != null ? service.getCountry(code) : new Country();
         model.addAttribute("country", country);
-
         return "country/delete";
     }
 
