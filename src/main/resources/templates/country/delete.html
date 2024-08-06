@@ -9,7 +9,9 @@
     <p>削除する国のコードを指定してください。</p>
     <form method="post" action="/country/delete">
         <input type="text" name="code" th:value="${code}">
+        <p th:unless="${code} eq null" th:text="${code}"></p>
         <button type="submit">送信</button>
+        <td><a th:href="@{/country/list(list=${list})}">一覧に戻る</a></td>
     </form>
 </body>
 </html>
